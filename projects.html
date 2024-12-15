@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      
+        <div class="container">
+                
+            <video autoplay muted loop id="background-video">
+                <source src="media/BlueMotion.mp4" type="video/mp4">
+            </video>
+
+            <nav class="navbar">
+                   <a href="index.html"><img src="/media/TuxHomeButtonPNG.png" alt="TuxHome" class="logo"></a> 
+                   <ul class="menu-links">
+                        <li><a href="blogs.html">BLOGS</a></li>
+                        <li><a href="certs.html">CERTS</a></li>
+                        <li><a href="projects.html">PROJECTS</a></li>
+                        <li><a href="aboutme.html">ABOUT ME</a></li>
+                   </ul>
+                </nav>
+            
+            <div class="projects">
+               
+                <div class="topic-header">
+                    <h1>Active Directory Projects</h1>
+                </div>
+
+                
+                <div class="image-adlabsetup">
+                    <img src="media/ActiveDirectoyLabSetupScreenshot.png" alt="ADLabSetup" id="adlabsetup-img">
+                </div>
+                <div class="content-adlabsetup">
+                    <h1 id="adlabsetup-header">Active Directory Lab</h1>
+                    <p>I put together an Active Directory home lab with a Windows 2019 Server and a Windows 10 Enterprise workstation. On this lab I configured DHCP and DNS so machines that I connected to the domain could receive an ip and have internet access. I also created users and set a password but I had set it up so then upon logon the user would change the password to something they could remember. I also added groups like IT, Security, and Workstations. I had pictured an imaginary scenario of this being in a building with multiple floors and so from that scenario in mind that was how I structured my organization units, creating floor 1 floor 2 and so and within them contained sub OUs of the Users and Computers. In this lab I also explored around with Group Policy Objects and created a GPO so all users on floor 1 had a WindowsXP wallpaper. In the Domain Controller I also had tested with shared resources and created a folder and configured permissions to allow it to be a shared resource strictly for the IT Group. That post can be found <a href="https://www.linkedin.com/posts/diego-magallanes-_windows-os-system-activity-7215967359415504897-TU-s?utm_source=share&utm_medium=member_desktop" id="windowsgpo-postlink"><span>here</span></a>.</p>
+                </div>
+
+
+                <div class="image-useraddchecker">
+                    <img src="media/PSS-Add&UserChecker.jpeg" alt="UserAddChecker" id="useraddchecker-img">
+                </div>
+                <div class="content-useraddchecker">
+                    <h1 id="useraddchecker-header">Domain User Add/Checker</h1>
+                    <p>I created this PowerShell script to be able to add Users and essential information about the user in a faster way within the command line. This script was not only just for adding but it could be used as a checker to view information on a existing user, if you input an existing user you will get that users information and will be told the user exists.
+                    Whether a new user or existing user you input or retrieve the following information:</p> <ul>
+                        <li>Enabled Status</li>
+                        <li>Common Name</li>
+                        <li>Given Name</li>
+                        <li>SurName</li>
+                        <li>User Principle Name</li>
+                        <li>Department</li>
+                        <li>Title</li>
+                        <li>Email</li>
+                        <li>Office Phone</li>
+                        <li>Primary Group</li>
+                        <li>Member Of (Groups)</li>
+                        <li>When Created</li>
+                        <li>When Changed</li>
+                        <li>Password Not Required Status</li>
+                        <li>Password Never Expires Status</li>
+                        <li>Password Last Set Date</li>
+                        <li>User Description</li>
+                    </ul>
+                    <p>When adding a new user after adding the essential information in the password section you input it and you get prompted a box for confirmation that you are sure of that password and when it comes to groups you get a list of the current groups in the domain and you select the group you wish to add the user to. I have a video you can check out <a href="https://www.linkedin.com/posts/diego-magallanes-_windows-system-os-activity-7218822351583371264-ZCb0?utm_source=share&utm_medium=member_desktop" id="useraddchecker-videolink"><span>here</span></a> that shows viewing an existing user and also inputting a new user.</p>
+                </div>
+
+
+                <div class="image-systemremoting">
+                    <img src="media/PSS-EssentialInfoRemoting.jpeg" alt="SystemRemoting" id="systemremoting-img">
+                </div>
+                <div class="content-systemremoting">
+                    <h1 id="systemremoting-header">Retrieving Essential System Info via Remoting</h1>
+                    <p>I put together a script to get essential information from systems in the domain. With this script I had to start off by knowing how to locate current information relating to OS and the hardware from each system which I figured out by learning how to query WMI (Windows Management Instrumentation) using the Cim-Instance command to query the different classes. The WMI classes queried were:</p> 
+                        <ul>
+                            <li>Win32_LogicalDisk</li>
+                            <li>Win32_OperatingSystem</li>
+                            <li>Win32_Service</li>
+                            <li>Win32_PhysicalMemory</li>
+                        </ul> 
+                        <p>Next was specifying the OU to retrieve the information from the systems in the OU, so I placed them into an array to be able to query each system using a loop. I then proceded to create a custom object using a hashtable with the properties I wanted to retrieve from each system which were:</p>
+                        <ul>
+                            <li>System Name</li>
+                            <li>IP Address</li>
+                            <li>Operating System</li>
+                            <li>Available Drive Space (GB)</li>
+                            <li>Memory (GB)</li>
+                            <li>User Profile Size (MB)</li>
+                            <li>Stopped Services</li>
+                        </ul><p>My full post about my process through the script can be seen <a href="https://www.linkedin.com/posts/diego-magallanes-_windows-system-os-activity-7220267284638912513-lpoy?utm_source=share&utm_medium=member_desktop" id="systemremoting-postlink"><span>here</span></a>.</p>
+                </div>
+
+
+            </div>
+        </div>
+        
+        
+    </body>
+</html>

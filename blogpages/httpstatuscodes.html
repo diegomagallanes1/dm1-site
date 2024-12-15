@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <div class="container">
+                
+            <video autoplay muted loop id="background-video">
+                <source src="/media/BlueMotion.mp4" type="video/mp4">
+            </video>
+
+            <nav class="navbar">
+                   <a href="/index.html"><img src="/media/TuxHomeButtonPNG.png" alt="TuxHome" class="logo"></a> 
+                   <ul class="menu-links">
+                        <li><a href="/blogs.html">BLOGS</a></li>
+                        <li><a href="/certs.html">CERTS</a></li>
+                        <li><a href="/projects.html">PROJECTS</a></li>
+                        <li><a href="/aboutme.html">ABOUT ME</a></li>
+                   </ul>
+            </nav>
+
+
+            <div class="blogcontent-container">
+                
+                <h1>HTTP STATUS CODES</h1>
+                <p>Http status codes are standard response codes provided by web servers to indicate the result of a client's request. The codes are grouped into five categories that each represent a different type of response. Here are the commonly encountered status codes. </p>
+
+                <h2 class="section-title">Often Encounters:</h2>
+                    <div class="syntax-breakdowns">
+                        <h2>200</h2>
+                        <p>Ok. Successful data retrieval</p>
+                        <h2>301/302</h2>
+                        <p>Redirects. Used for site migrations or temp links</p>
+                        <h2>404</h2>
+                        <p>Not found. URL is broken or doesn't exist</p>
+                        <h2>500</h2>
+                        <p>Internal server error. Server side code failing</p>
+                    </div>
+                <p>These are the codes that are often encountered. The codes below give some more specific encounter types according to the categories. And for a more in specific in depth view of other possible status code encounters there is a link at the bottom!</p>
+
+                
+                <h2 class="section-title">The 100s:</h2>
+                <p>Response codes from the 100s means that the request was simply recieved</p>
+                    <div class="syntax-breakdowns">
+                        <h2>100</h2>
+                         <p>client should continue the request</p>
+                         <h2>101</h2>
+                         <p>server agrees to switch protocols</p>
+                         <h2>102</h2>
+                         <p>request recieved by server but no status was available at the time of the response</p>
+                         <h2>103</h2>
+                         <p>preloading sources while server prepares a response</p>
+                    </div>
+
+                <h2 class="section-title">The 200s:</h2>
+                <p>Response codes from the 200s confirms that the server successfully processed the request</p>
+                    <div class="syntax-breakdowns">
+                        <h2>200</h2>
+                         <p>Ok. Successful request, content returned depends on the request method. GET: resource retrieved. POST: data submitted</p>
+                         <h2>201</h2>
+                         <p>Created. A new resource was created. Typically the response sent after POST requests, or some PUT requests</p>
+                         <h2>204</h2>
+                         <p>Request successful but no content is returned</p>
+                    </div>
+
+                <h2 class="section-title">The 300s:</h2>
+                <p>Response codes from the 300s often means redirection is involved</p>
+                    <div class="syntax-breakdowns">
+                        <h2>301</h2>
+                         <p>Moved Permanently. The URL of the requested source has been moved to a new URL</p>
+                        <h2>302</h2>
+                        <p>Found. The resource temporarily resides at another URL, but the original URL should still be used in the future</p>
+                        <h2>303</h2>
+                        <p>The server sent this reponse to direct the client to get the requested resource at another URI with a GET request</p>
+                        <h2>304</h2>
+                        <p>The requested resource hasn't changed since the last request, so the client can used the cached version</p>
+                        <h2>305</h2>
+                        <p>Use Proxy. Indicates that a requested response must be accessed by a proxy.</p>
+                        <h2>307</h2>
+                        <p>Temporary redirect. Similar to 302, but ensures the same http method is used for the redirect</p>
+                        <h2>308</h2>
+                        <p>Permanent redirect. This means that the resource is now permanently in another URI, speicifed by the location response header.</p>
+                    </div>
+
+                <h2 class="section-title">The 400s:</h2>
+                <p>Reponse codes from the 400s indicate that the client made a mistake in the request.</p>
+                    <div class="syntax-breakdowns">
+                        <h2>400</h2>
+                        <p>Bad request. The server couldn't process the request due to invalid syntax or missing information</p>
+                        <h2>401</h2>
+                        <p>Unauthorized. Authentication is required, but the client hasn't provided credentials to get the requested response</p>
+                        <h2>403</h2>
+                        <p>Forbidden. The server understands the request, but refuses to authorize it</p>
+                        <h2>404</h2>
+                        <p>The server can't find the requested resource</p>
+                        <h2>405</h2>
+                        <p>Method not allowed. The request method is known by the server but not supported by the target resource</p>
+                        <h2>429</h2>
+                        <p>Too many requests. The client has sent too many requests in a given amount of time (rate limiting)</p> 
+                    </div>
+
+                <h2 class="section-title">The 500s:</h2>
+                <p>Reponse codes from the 500s indicate that the server failed to process a valid request</p>
+                    <div class="syntax-breakdowns">
+                        <h2>500</h2>
+                        <p>Internal server error. The server has encountered a situation it does not know how to handle</p>
+                        <h2>501</h2>
+                        <p>Not implemented. The server does not support the request method or functionality</p>
+                        <h2>502</h2>
+                        <p>Bad gateway. The server while working as a gateway or proxy recieved an invalid response from an upstream server</p>
+                        <h2>503</h2>
+                        <p>Service unavailable. The server is temporarily unavailable</p>
+                        <h2>504</h2>
+                        <p>Gateway timeout. The server acting as a gateway or proxy, didn't get a reponse in time from an upstream server</p>
+                    </div>
+
+                <h2 class="section-title">More In Depth:</h2>
+                <p>The status codes here are the ones that are often encountered but if you wish to have a deeper look at other ones, here is a explanation of them from Mozilla web docs</p>
+                <div class="command-container">
+                    <div class="fakenav">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="green"></div>
+                    </div>
+                    <h3 class="command-display">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</h3>
+                </div>
+                
+            </div>
